@@ -1,0 +1,32 @@
+button {
+padding: 60px;
+font-size: 40px;
+background: orange;
+height: 200px;
+width: 150px;
+}
+
+button.operators {
+  background: grey;
+}
+
+#equals {
+  background: blue;
+}
+
+.output {
+display: block;
+width: 46.75%;
+height: 5em;
+padding: 1%;
+border: 0.1em solid black;
+font: 1.1em "Century Gothic", "Century Gothic", "Apple Gothic", sans-serif;
+}
+
+body {
+  align: center;
+}
+
+#outPopUp {
+  align: center;
+}
