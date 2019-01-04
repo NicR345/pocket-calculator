@@ -1,32 +1,44 @@
 button {
-padding: 60px;
-font-size: 40px;
-background: orange;
-height: 200px;
+font-size: 30px;
+background: #505050;
+height: 150px;
 width: 150px;
+border-radius: 50%;
+text-align: center;
+border: 2px solid black;
 }
 
-button.operators {
-  background: grey;
+.operators {
+  background: orange;
 }
 
-#equals {
-  background: blue;
+#zero {
+  font-size: 30px;
+  height: 150px;
+  width: 300px;
+  border-radius: 80px / 80px;
+  text-align: center;
+  border: 2px solid black;
 }
 
 .output {
 display: block;
 width: 46.75%;
-height: 5em;
+height: 7em;
 padding: 1%;
-border: 0.1em solid black;
+border: 0.1em solid white;
 font: 1.1em "Century Gothic", "Century Gothic", "Apple Gothic", sans-serif;
+color: white;
 }
 
-body {
-  align: center;
+.mod {
+  background: #B0B0B0;
 }
 
 #outPopUp {
   align: center;
+}
+
+body {
+  background-color: black;
 }
