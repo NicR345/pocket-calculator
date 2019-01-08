@@ -23,11 +23,11 @@ border: 2px solid black;
 
 .output {
 display: block;
-width: 46.75%;
-height: 7em;
-padding: 1%;
-border: 0.1em solid white;
-font: 1.1em "Century Gothic", "Century Gothic", "Apple Gothic", sans-serif;
+width: 47%;
+height: 120px;
+border: 2px solid black;
+font: "Century Gothic", "Century Gothic", "Apple Gothic", sans-serif;
+font-size: 60px;
 color: white;
 }
 
