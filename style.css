@@ -1,6 +1,7 @@
 button {
-font-size: 30px;
-background: #505050;
+font-size: 50px;
+color: white;
+background: #2a2b2b;
 height: 150px;
 width: 150px;
 border-radius: 50%;
@@ -9,16 +10,27 @@ border: 2px solid black;
 }
 
 .operators {
-  background: orange;
+  background: #FF9500;
 }
 
 #zero {
-  font-size: 30px;
+  font-size: 50px;
+  color: white;
   height: 150px;
   width: 300px;
   border-radius: 80px / 80px;
   text-align: center;
   border: 2px solid black;
+}
+
+#parenth {
+    font-size: 49.5px;
+    color: white;
+    height: 150px;
+    width: 300px;
+    border-radius: 80px / 80px;
+    text-align: center;
+    border: 2px solid black;
 }
 
 .output {
@@ -32,7 +44,8 @@ color: white;
 }
 
 .mod {
-  background: #B0B0B0;
+  background: #D4D4D2;
+  color: black;
 }
 
 #outPopUp {
