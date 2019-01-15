@@ -138,9 +138,6 @@ function subtr() {
 function equals() {
   var div= document.getElementById("output");
   string = eval(string);
-  if (Number(string) > 999999999) {
-    div.innerHTML = Number(string).toExponential(9)
-  }
   div.innerHTML = Number(string);
   state = 1;
 }
