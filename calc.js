@@ -138,17 +138,9 @@ function negative() {
   div.innerHTML = string;
   state = 0;
 }
-
-function parenthLeft() {
- var div= document.getElementById("output");
- string += "("
- div.innerHTML = string;
- state = 0;
-}
-
-function parenthRight() {
- var div= document.getElementById("output");
- string += ")"
- div.innerHTML = string;
- state = 0;
-}
+ 
+function decimal() {
+  var div= document.getElementById("output");
+  string += "."
+  div.innerHTML = string;
+  state = 0;
