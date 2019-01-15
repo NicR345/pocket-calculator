@@ -128,7 +128,7 @@ function subtr() {
 function equals() {
   var div= document.getElementById("output");
   string = eval(string);
-  div.innerHTML = Number(string);
+  div.innerHTML = Number(string).toLocaleString("en");
   state = 1;
 }
 
@@ -144,3 +144,4 @@ function decimal() {
   string += "."
   div.innerHTML = string;
   state = 0;
+}
