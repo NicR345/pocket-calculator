@@ -128,7 +128,7 @@ function subtr() {
 function equals() {
   var div= document.getElementById("output");
   string = eval(string);
-  div.innerHTML = Number(string).toLocaleString("en");
+  div.innerHTML = Number(string);
   state = 1;
 }
 
