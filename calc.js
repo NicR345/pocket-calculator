@@ -1,6 +1,16 @@
 let string = "";
 var state = 0
 
+function d0() {
+  if (state == 1) {
+    string = "0"
+  } else {
+    string += "0"
+  }
+  var div = document.getElementById("output");
+  div.innerHTML = string;
+}
+
 function d1() {
   if (state == 1) {
     string = "1"
