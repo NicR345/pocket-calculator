@@ -154,3 +154,4 @@ function decimal() {
   string += "."
   div.innerHTML = string;
   state = 0;
+}
