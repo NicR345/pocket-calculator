@@ -141,7 +141,7 @@ function equals() {
   if (Number(string) > 999999999) {
     div.innerHTML = Number(string).toExponential(9)
   }
-  div.innerHTML = Number(string).roundTo(9);
+  div.innerHTML = Number(string);
   state = 1;
 }
 
