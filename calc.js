@@ -2,6 +2,7 @@ let string = "";
 var state = 0
 let saved= "";
 let operatorUsed = 0;
+let decimalUsed = 0;
 
 function d0() {
   if (state == 1) {
@@ -9,6 +10,10 @@ function d0() {
   } else {
     if (operatorUsed == 1) {
       operatorUsed = 0;
+      string = saved;
+    }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
       string = saved;
     }
     string += "0"
@@ -25,6 +30,10 @@ function d1() {
       operatorUsed = 0;
       string = saved;
     }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
     string += "1"
   }
   var div = document.getElementById("output");
@@ -37,6 +46,10 @@ function d2() {
   } else {
     if (operatorUsed == 1) {
       operatorUsed = 0;
+      string = saved;
+    }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
       string = saved;
     }
     string += "2"
@@ -53,6 +66,10 @@ function d3() {
       operatorUsed = 0;
       string = saved;
     }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
   string += "3"
   }
   var div = document.getElementById("output");
@@ -65,6 +82,10 @@ function d4() {
   } else {
     if (operatorUsed == 1) {
       operatorUsed = 0;
+      string = saved;
+    }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
       string = saved;
     }
   string += "4"
@@ -81,6 +102,10 @@ function d5() {
       operatorUsed = 0;
       string = saved;
     }
+     if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
   string += "5"
   }
   var div = document.getElementById("output");
@@ -95,6 +120,10 @@ function d6() {
     operatorUsed = 0;
     string = saved;
     }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
   string += "6"
   }
   var div = document.getElementById("output");
@@ -107,6 +136,10 @@ function d7() {
   } else {
     if (operatorUsed == 1) {
       operatorUsed = 0;
+      string = saved;
+    }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
       string = saved;
     }
   string += "7"
@@ -123,6 +156,10 @@ function d8() {
       string = saved;
       operatorUsed = 0;
     }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
+    }
   string += "8"
   }
   var div = document.getElementById("output");
@@ -136,6 +173,10 @@ function d9() {
     if (operatorUsed == 1) {
       string = saved;
       operatorUsed = 0;
+    }
+    if (decimalUsed == 1) {
+      decimalUsed = 0;
+      string = saved;
     }
     string += "9"
   }
@@ -210,7 +251,7 @@ function decimal() {
   saved += "."
   div.innerHTML = saved;
   state = 0;
-  operatorUsed = 1;
+  decimalUsed = 1;
 }
 
 function percent() {
