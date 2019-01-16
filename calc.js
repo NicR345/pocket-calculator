@@ -1,5 +1,7 @@
 let string = "";
 var state = 0
+let saved= "";
+let operatorUsed = 0;
 
 function d0() {
   if (state == 1) {
@@ -15,6 +17,9 @@ function d1() {
   if (state == 1) {
     string = "1"
   } else {
+    if (operatorUsed == 1) {
+      string = saved;
+    }
     string += "1"
   }
   var div = document.getElementById("output");
@@ -25,6 +30,9 @@ function d2() {
   if (state == 1) {
     string = "2"
   } else {
+    if (operatorUsed == 1) {
+      string = saved;
+    }
     string += "2"
   }
   var div = document.getElementById("output");
@@ -35,7 +43,10 @@ function d3() {
   if (state == 1) {
     string = "3"
   } else {
-    string += "3"
+    if (operatorUsed == 1) {
+      string = saved;
+    }
+  string += "3"
   }
   var div = document.getElementById("output");
   div.innerHTML = string;
@@ -45,7 +56,10 @@ function d4() {
   if (state == 1) {
     string = "4"
   } else {
-    string += "4"
+    if (operatorUsed == 1) {
+      string = saved;
+    }
+  string += "4"
   }
   var div = document.getElementById("output");
   div.innerHTML = string;
@@ -55,7 +69,10 @@ function d5() {
   if (state == 1) {
     string = "5"
   } else {
-    string += "5"
+    if (operatorUsed == 1) {
+      string = saved;
+    }
+  string += "5"
   }
   var div = document.getElementById("output");
   div.innerHTML = string;
@@ -65,7 +82,10 @@ function d6() {
   if (state == 1) {
     string = "6"
   } else {
-    string += "6"
+    if (operatorUsed == 1) {
+      string = saved;
+    }
+  string += "6"
   }
   var div = document.getElementById("output");
   div.innerHTML = string;
@@ -75,7 +95,10 @@ function d7() {
   if (state == 1) {
     string = "7"
   } else {
-    string += "7"
+    if (operatorUsed == 1) {
+      string = saved;
+    }
+  string += "7"
   }
   var div = document.getElementById("output");
   div.innerHTML = string;
@@ -85,7 +108,10 @@ function d8() {
   if (state == 1) {
     string = "8"
   } else {
-    string += "8"
+    if (operatorUsed == 1) {
+      string = saved;
+    }
+  string += "8"
   }
   var div = document.getElementById("output");
   div.innerHTML = string;
@@ -95,6 +121,9 @@ function d9() {
   if (state == 1) {
     string = "9"
   } else {
+    if (operatorUsed == 1) {
+      string = saved;
+    }
     string += "9"
   }
   var div = document.getElementById("output");
@@ -103,36 +132,46 @@ function d9() {
 
 function ac() {
   var div = document.getElementById("output");
+  div.innerHTML = 0;
   string = " "
-  div.innerHTML = string;
+  saved = ""
+  state = 0;
 }
 
 function multi() {
   var div = document.getElementById("output");
-  string += "*"
-  div.innerHTML = string;
+  saved = string
+  saved += "*"
+  div.innerHTML = saved;
   state = 0;
+  operatorUsed = 1;
 }
 
 function addi() {
   var div = document.getElementById("output");
-  string += "+"
-  div.innerHTML = string;
+  saved = string
+  saved += "+"
+  div.innerHTML = saved;
   state = 0;
+  operatorUsed = 1;
 }
 
 function divi() {
   var div = document.getElementById("output");
-  string += "/"
-  div.innerHTML = string;
+  saved = string
+  saved += "/"
+  div.innerHTML = saved;
   state = 0;
+  operatorUsed = 1;
 }
 
 function subtr() {
   var div = document.getElementById("output");
-  string += "-"
-  div.innerHTML = string;
+  saved = string
+  saved += "-"
+  div.innerHTML = saved;
   state = 0;
+  operatorUsed = 1;
 }
 
 function equals() {
@@ -148,10 +187,17 @@ function negative() {
   div.innerHTML = string;
   state = 0;
 }
- 
+
 function decimal() {
   var div= document.getElementById("output");
-  string += "."
+  string += ".";
+  div.innerHTML = string;
+  state = 0;
+}
+
+function percent() {
+  var div = document.getElementById("output");
+  string = Number(string) * (0.01)
   div.innerHTML = string;
   state = 0;
 }
