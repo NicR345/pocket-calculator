@@ -7,6 +7,10 @@ function d0() {
   if (state == 1) {
     string = "0"
   } else {
+    if (operatorUsed == 1) {
+      operatorUsed = 0;
+      string = saved;
+    }
     string += "0"
   }
   var div = document.getElementById("output");
@@ -18,6 +22,7 @@ function d1() {
     string = "1"
   } else {
     if (operatorUsed == 1) {
+      operatorUsed = 0;
       string = saved;
     }
     string += "1"
@@ -31,6 +36,7 @@ function d2() {
     string = "2"
   } else {
     if (operatorUsed == 1) {
+      operatorUsed = 0;
       string = saved;
     }
     string += "2"
@@ -44,6 +50,7 @@ function d3() {
     string = "3"
   } else {
     if (operatorUsed == 1) {
+      operatorUsed = 0;
       string = saved;
     }
   string += "3"
@@ -57,6 +64,7 @@ function d4() {
     string = "4"
   } else {
     if (operatorUsed == 1) {
+      operatorUsed = 0;
       string = saved;
     }
   string += "4"
@@ -70,6 +78,7 @@ function d5() {
     string = "5"
   } else {
     if (operatorUsed == 1) {
+      operatorUsed = 0;
       string = saved;
     }
   string += "5"
@@ -83,7 +92,8 @@ function d6() {
     string = "6"
   } else {
     if (operatorUsed == 1) {
-      string = saved;
+    operatorUsed = 0;
+    string = saved;
     }
   string += "6"
   }
@@ -96,6 +106,7 @@ function d7() {
     string = "7"
   } else {
     if (operatorUsed == 1) {
+      operatorUsed = 0;
       string = saved;
     }
   string += "7"
@@ -110,6 +121,7 @@ function d8() {
   } else {
     if (operatorUsed == 1) {
       string = saved;
+      operatorUsed = 0;
     }
   string += "8"
   }
@@ -123,6 +135,7 @@ function d9() {
   } else {
     if (operatorUsed == 1) {
       string = saved;
+      operatorUsed = 0;
     }
     string += "9"
   }
@@ -177,7 +190,10 @@ function subtr() {
 function equals() {
   var div= document.getElementById("output");
   string = eval(string);
-  div.innerHTML = Number(string);
+  div.innerHTML = Number(string).toLocaleString();
+  if (Number(string) > 999999999 || Number(string) < 0.000000001) {
+    div.innerHTML = Number(string).toExponential()
+  }
   state = 1;
 }
 
@@ -190,9 +206,11 @@ function negative() {
 
 function decimal() {
   var div= document.getElementById("output");
-  string += ".";
-  div.innerHTML = string;
+  saved = string
+  saved += "."
+  div.innerHTML = saved;
   state = 0;
+  operatorUsed = 1;
 }
 
 function percent() {
