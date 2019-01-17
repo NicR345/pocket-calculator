@@ -2,7 +2,8 @@ let string = "";
 var state = 0
 let saved= "";
 let operatorUsed = 0;
-let decimalUsed = 0;
+var decimalUsed = false;
+var acUsed = false;
 
 function d0() {
   if (state == 1) {
@@ -189,43 +190,61 @@ function ac() {
   div.innerHTML = 0;
   string = " "
   saved = ""
+  operatorUsed = 0;
+  acUsed = true;
   state = 0;
+  if (acUsed == true) {
+    decimalUsed = false;
+    document.getElementById("deciButton").disabled = false;
+  }
 }
 
 function multi() {
   var div = document.getElementById("output");
-  saved = string
+  saved = string;
   saved += "*"
   div.innerHTML = saved;
   state = 0;
   operatorUsed = 1;
+  if (operatorUsed == 1) {
+    document.getElementById("deciButton").disabled = false;
+  }
 }
 
 function addi() {
   var div = document.getElementById("output");
-  saved = string
+  saved = string;
   saved += "+"
   div.innerHTML = saved;
   state = 0;
   operatorUsed = 1;
+  if (operatorUsed == 1) {
+    document.getElementById("deciButton").disabled = false;
+  }
 }
 
 function divi() {
   var div = document.getElementById("output");
-  saved = string
+  saved = string;
   saved += "/"
   div.innerHTML = saved;
   state = 0;
   operatorUsed = 1;
+  if (operatorUsed == 1) {
+    document.getElementById("deciButton").disabled = false;
+  }
 }
 
 function subtr() {
   var div = document.getElementById("output");
-  saved = string
+  saved = string;
   saved += "-"
   div.innerHTML = saved;
   state = 0;
   operatorUsed = 1;
+  if (operatorUsed == 1) {
+    document.getElementById("deciButton").disabled = false;
+  }
 }
 
 function equals() {
@@ -246,12 +265,16 @@ function negative() {
 }
 
 function decimal() {
-  var div= document.getElementById("output");
-  saved = string
-  saved += "."
-  div.innerHTML = saved;
-  state = 0;
-  decimalUsed = 1;
+  if (decimalUsed == false){
+    var div = document.getElementById("output");
+    saved = string;
+    saved += ".";
+    div.innerHTML = saved;
+    decimalUsed = true;
+  }
+  if (decimalUsed == true) {
+    document.getElementById("deciButton").disabled = true;
+  }
 }
 
 function percent() {
